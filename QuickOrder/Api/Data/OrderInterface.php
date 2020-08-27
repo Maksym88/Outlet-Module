@@ -2,6 +2,10 @@
 
 namespace ALevel\QuickOrder\Api\Data;
 
+/**
+ * Interface OrderInterface
+ * @package ALevel\QuickOrder\Api\Data
+ */
 interface OrderInterface
 {
     const ORDER_ID = 'order_id';
@@ -14,7 +18,7 @@ interface OrderInterface
 
     const EMAIL = 'email';
 
-    const STATUS_ID = 'status_id';
+    const STATUS = 'status';
 
     /**
      * @return mixed
@@ -74,12 +78,12 @@ interface OrderInterface
     /**
      * @return mixed
      */
-    public function getStatusId();
+    public function getStatus();
 
     /**
-     * @param $id
+     * @param $status
      * @return mixed
      */
-    public function setStatusId($id);
+    public function setStatus($status);
 
 }

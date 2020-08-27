@@ -49,9 +49,6 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="order_id"/>
         </constraint>
-<!--        <index referenceId="INDEX_SEVERITY" indexType="btree">-->
-<!--            <column name="label"/>-->
-<!--        </index>-->
     </table>
     <table name="alevel_quick_order_status" resource="default" engine="innodb" comment="Alevel Status">
         <column xsi:type="int"
@@ -74,12 +71,5 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="status_id"/>
         </constraint>
-<!--        <index referenceId="INDEX_SEVERITY" indexType="btree">-->
-<!--            <column name="label"/>-->
-<!--        </index>-->
-<!--        <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES"-->
-<!--                    table="alevel_quick_order" column="label"-->
-<!--                    referenceTable="alevel_quick_order_status" referenceColumn="label"-->
-<!--                    onDelete="CASCADE"/>-->
     </table>
 </schema>

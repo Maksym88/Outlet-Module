@@ -44,9 +44,9 @@ define([
                 sku = $("#product_addtocart_form").attr("data-product-sku");
 
                 if (
-                    typeof (name) == "string" && name.length !== 0 &&
-                    Number.isInteger(phoneIsNumber) === true && phoneIsNumber !== 0 && phone.length !== 0 &&
-                    correctEmail(email) === true && email.length !== 0
+                    typeof (name) == "string" && name.length != 0 &&
+                    Number.isInteger(phoneIsNumber) == true && phoneIsNumber != 0 && phone.length != 0 &&
+                    correctEmail(email) == true && email.length != 0
                 ) {
 
                     let data = {
@@ -76,6 +76,8 @@ define([
                     $("#errorMessage").html("<span style= 'color: red'>" +
                         "Your data is not valid. Please, check the correct spelling</span>");
                 }
+
+                //}
 
                 function correctEmail(email) {
                     let reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

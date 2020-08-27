@@ -1,6 +1,5 @@
 <?php
 
-
 namespace ALevel\QuickOrder\Controller\Adminhtml\Status;
 
 use ALevel\QuickOrder\Api\Repository\StatusRepositoryInterface;
@@ -10,6 +9,10 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class Delete
+ * @package ALevel\QuickOrder\Controller\Adminhtml\Status
+ */
 class Delete extends Action
 {
     /** @var StatusRepositoryInterface */
@@ -21,18 +24,19 @@ class Delete extends Action
     /**
      * Delete constructor.
      *
-     * @param Context                   $context
-     * @param StatusRepositoryInterface   $repository
-     * @param LoggerInterface           $logger
+     * @param Context $context
+     * @param StatusRepositoryInterface $repository
+     * @param LoggerInterface $logger
      */
     public function __construct(
         Context $context,
         StatusRepositoryInterface $repository,
         LoggerInterface $logger
-    ) {
+    )
+    {
         parent::__construct($context);
-        $this->repository   = $repository;
-        $this->logger       = $logger;
+        $this->repository = $repository;
+        $this->logger = $logger;
     }
 
     /**

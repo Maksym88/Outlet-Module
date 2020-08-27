@@ -13,9 +13,12 @@ use Magento\Framework\Api\SearchResultsInterface;
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Api\SearchResultsInterfaceFactory;
 use Magento\Framework\Exception\CouldNotDeleteException;
-use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
+/**
+ * Class OrderRepository
+ * @package ALevel\QuickOrder\Repository
+ */
 class OrderRepository implements OrderRepositoryInterface
 {
     /**
@@ -43,6 +46,14 @@ class OrderRepository implements OrderRepositoryInterface
      */
     private $searchResultFactory;
 
+    /**
+     * OrderRepository constructor.
+     * @param ResourceModel $resource
+     * @param ModelFactory $modeFactory
+     * @param CollectionFactory $collectionFactory
+     * @param CollectionProcessorInterface $collectionProcessor
+     * @param SearchResultsInterfaceFactory $searchResultFactory
+     */
     public function __construct(
         ResourceModel $resource,
         ModelFactory $modeFactory,
@@ -59,7 +70,9 @@ class OrderRepository implements OrderRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param int $id
+     * @return OrderInterface
+     * @throws NoSuchEntityException
      */
     public function getById(int $id): OrderInterface
     {
@@ -75,7 +88,8 @@ class OrderRepository implements OrderRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return SearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria): SearchResultsInterface
     {
@@ -106,10 +120,11 @@ class OrderRepository implements OrderRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param OrderInterface $order
+     * @return $this|OrderRepositoryInterface
+     * @throws CouldNotDeleteException
      */
-    public
-    function delete(OrderInterface $order): OrderRepositoryInterface
+    public function delete(OrderInterface $order): OrderRepositoryInterface
     {
         try {
             $this->resource->delete($order);
@@ -121,10 +136,12 @@ class OrderRepository implements OrderRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param int $id
+     * @return $this|OrderRepositoryInterface
+     * @throws CouldNotDeleteException
+     * @throws NoSuchEntityException
      */
-    public
-    function deleteById(int $id): OrderRepositoryInterface
+    public function deleteById(int $id): OrderRepositoryInterface
     {
         $order = $this->getById($id);
         $this->delete($order);

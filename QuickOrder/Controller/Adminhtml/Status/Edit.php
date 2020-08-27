@@ -6,6 +6,10 @@ namespace ALevel\QuickOrder\Controller\Adminhtml\Status;
 use Magento\Backend\App\Action;
 use Magento\Framework\Controller\ResultFactory;
 
+/**
+ * Class Edit
+ * @package ALevel\QuickOrder\Controller\Adminhtml\Status
+ */
 class Edit extends Action
 {
     /**

@@ -17,7 +17,9 @@
     </argument>
     <dataSource name="status_grid_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="class" xsi:type="string">
+                Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
+            </argument>
             <argument name="name" xsi:type="string">status_grid_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">status_id</argument>
             <argument name="requestFieldName" xsi:type="string">status_id</argument>
@@ -66,10 +68,12 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="*/*/massDelete"/>
+                        <item name="url" xsi:type="url" path="quick_order/status/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete items</item>
-                            <item name="message" xsi:type="string" translate="true">Are you sure you want to delete selected items?</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you want to delete
+                                selected items?
+                            </item>
                         </item>
                     </item>
                 </argument>
@@ -121,7 +125,8 @@
             </argument>
         </column>
 
-        <actionsColumn name="actions" class="ALevel\QuickOrder\Ui\Component\Listing\Column\ActionsStatus" sortOrder="200">
+        <actionsColumn name="actions" class="ALevel\QuickOrder\Ui\Component\Listing\Column\ActionsStatus"
+                       sortOrder="200">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">status_id</item>

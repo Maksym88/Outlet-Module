@@ -8,6 +8,10 @@ use ALevel\QuickOrder\Api\Data\StatusInterface;
 use ALevel\QuickOrder\Model\ResourceModel\Status\Collection;
 use ALevel\QuickOrder\Model\ResourceModel\Status\CollectionFactory;
 
+/**
+ * Class StatusProvider
+ * @package ALevel\QuickOrder\DataProvider
+ */
 class StatusProvider extends ModifierPoolDataProvider
 {
     /**
@@ -33,7 +37,8 @@ class StatusProvider extends ModifierPoolDataProvider
         DataPersistorInterface $dataPersistor,
         array $meta = [],
         array $data = []
-    ) {
+    )
+    {
         $this->collection = $collectionFactory->create();
         $this->dataPersistor = $dataPersistor;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);

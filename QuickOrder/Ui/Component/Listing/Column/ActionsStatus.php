@@ -7,6 +7,10 @@ use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
+/**
+ * Class ActionsStatus
+ * @package ALevel\QuickOrder\Ui\Component\Listing\Column
+ */
 class ActionsStatus extends Column
 {
     const URL_PATH_EDIT = 'quick_order/status/edit';
@@ -45,7 +49,10 @@ class ActionsStatus extends Column
         parent::__construct($context, $uiComponentFactory, $components, $data);
     }
 
-    /** {@inheritdoc} */
+    /**
+     * @param array $dataSource
+     * @return array
+     */
     public function prepareDataSource(array $dataSource)
     {
         if (isset($dataSource['data']['items'])) {

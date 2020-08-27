@@ -5,10 +5,14 @@ namespace ALevel\QuickOrder\Controller\Adminhtml\Grid;
 use Magento\Backend\App\Action;
 use Magento\Framework\Controller\ResultFactory;
 
+/**
+ * Class Add
+ * @package ALevel\QuickOrder\Controller\Adminhtml\Grid
+ */
 class Add extends Action
 {
     /**
-     * @inheritDoc
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Layout
      */
     public function execute()
     {

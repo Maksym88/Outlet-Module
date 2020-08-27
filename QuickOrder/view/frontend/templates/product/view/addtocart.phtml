@@ -8,10 +8,10 @@
 ?>
 <?php $_product = $block->getProduct(); ?>
 <?php $buttonTitle = __('Add to Cart'); ?>
-<?php if ($_product->isSaleable()) :?>
+<?php if ($_product->isSaleable()) : ?>
     <div class="box-tocart">
         <div class="fieldset">
-            <?php if ($block->shouldRenderQuantity()) :?>
+            <?php if ($block->shouldRenderQuantity()) : ?>
                 <div class="field qty">
                     <label class="label" for="qty"><span><?= $block->escapeHtml(__('Qty')) ?></span></label>
                     <div class="control">
@@ -60,26 +60,22 @@
 <script type="text/x-magento-init">
     {
         "*": {
-            "Magento_Ui/js/core/app": {
-                "components": {
-                    "alevel-popup":{
-                        "component":"ALevel_QuickOrder/js/components/send-info",
-                        "url": "/q_order/record/add"
-                    }
-                }
-            }
+            "ALevel_QuickOrder/js/components/send-info": {}
         }
     }
+
 </script>
+
 <div class="modal" id="quick-order-form" style="display:none;">
-    <form id="popup-modal-info" name="customerInfo" >
+    <form id="popup-modal-info" name="customerInfo">
         <h2>Write your information</h2>
         <p><label for="customerName">Name: </label>
-            <input type="text" name="customerName" id="customerName" placeholder="Your name" required></p>
+            <input type="text" name="customerName" id="customerName" placeholder="Your name" max="32" required></p>
         <p><label for="customerPhone">Phone: </label>
-            <input type="text" name="phone" id="customerPhone" placeholder="Your phone" required></p>
+            <input type="text" name="phone" id="customerPhone" placeholder="Your phone" max="20" required></p>
         <p><label for="customerEmail">Email: </label>
-            <input type="email" name="email" id="customerEmail" placeholder="Your email"></p>
+            <input type="email" name="email" id="customerEmail" placeholder="Your email" max="50" ></p>
+        <p><div id="errorMessage"></div></p>
         <input type="text" name="productSku" id="sku" style="display: none">
         <p>
             <button class="action primary tocart"
@@ -91,3 +87,4 @@
         </p>
     </form>
 </div>
+

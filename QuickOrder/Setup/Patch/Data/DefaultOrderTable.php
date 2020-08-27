@@ -1,6 +1,5 @@
 <?php
 
-
 namespace ALevel\QuickOrder\Setup\Patch\Data;
 
 use ALevel\QuickOrder\Api\Data\Schema\OrderSchemaInterface;
@@ -8,6 +7,10 @@ use ALevel\QuickOrder\Api\Data\OrderInterfaceFactory;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\DB\TransactionFactory;
 
+/**
+ * Class DefaultOrderTable
+ * @package ALevel\QuickOrder\Setup\Patch\Data
+ */
 class DefaultOrderTable implements DataPatchInterface
 {
     /**
@@ -20,6 +23,11 @@ class DefaultOrderTable implements DataPatchInterface
      */
     private $modelFactory;
 
+    /**
+     * DefaultOrderTable constructor.
+     * @param TransactionFactory $transactionFactory
+     * @param OrderInterfaceFactory $orderInterfaceFactory
+     */
     public function __construct(
         TransactionFactory $transactionFactory,
         OrderInterfaceFactory $orderInterfaceFactory

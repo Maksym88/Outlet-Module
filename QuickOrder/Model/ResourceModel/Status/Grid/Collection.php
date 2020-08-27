@@ -10,6 +10,10 @@ use Magento\Framework\View\Element\UiComponent\DataProvider\Document;
 use ALevel\QuickOrder\Model\ResourceModel\Status as ResourceModel;
 use ALevel\QuickOrder\Model\ResourceModel\Status\Collection as StatusCollection;
 
+/**
+ * Class Collection
+ * @package ALevel\QuickOrder\Model\ResourceModel\Status\Grid
+ */
 class Collection extends StatusCollection implements SearchResultInterface
 {
     /** @var AggregationInterface */

@@ -7,6 +7,7 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 /**
  * Class BackButton
+ * @package ALevel\QuickOrder\Block\Adminhtml\Status\Edit
  */
 class BackButton extends GenericButton implements ButtonProviderInterface
 {

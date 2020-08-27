@@ -10,42 +10,46 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
+/**
+ * Interface StatusRepositoryInterface
+ * @package ALevel\QuickOrder\Api\Repository
+ */
 interface StatusRepositoryInterface
 {
     /**
      * Get status by ID
      *
      * @param int $id
-     * @throws NoSuchEntityException
      * @return StatusInterface
+     * @throws NoSuchEntityException
      */
-    public function getById(int $id) : StatusInterface;
+    public function getById(int $id): StatusInterface;
 
     /**
      * @param SearchCriteriaInterface $searchCriteria
      * @return SearchResultsInterface
      */
-    public function getList(SearchCriteriaInterface $searchCriteria) : SearchResultsInterface;
+    public function getList(SearchCriteriaInterface $searchCriteria): SearchResultsInterface;
 
     /**
      * @param StatusInterface $status
-     * @throws CouldNotSaveException
      * @return StatusInterface
+     * @throws CouldNotSaveException
      */
-    public function save(StatusInterface $status) : StatusInterface;
+    public function save(StatusInterface $status): StatusInterface;
 
     /**
      * @param StatusInterface $status
-     * @throws CouldNotDeleteException
      * @return StatusRepositoryInterface
+     * @throws CouldNotDeleteException
      */
-    public function delete(StatusInterface $status) : StatusRepositoryInterface;
+    public function delete(StatusInterface $status): StatusRepositoryInterface;
 
     /**
      * @param int $id
-     * @throws CouldNotDeleteException
-     * @throws NoSuchEntityException
      * @return StatusRepositoryInterface
+     * @throws NoSuchEntityException
+     * @throws CouldNotDeleteException
      */
-    public function deleteById(int $id) : StatusRepositoryInterface;
+    public function deleteById(int $id): StatusRepositoryInterface;
 }

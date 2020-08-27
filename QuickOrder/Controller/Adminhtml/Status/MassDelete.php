@@ -9,26 +9,34 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class MassDelete
+ * @package ALevel\QuickOrder\Controller\Adminhtml\Status
+ */
 class MassDelete extends Action
 {
     /** @var StatusRepositoryInterface */
     private $repository;
 
+    /**
+     * @var LoggerInterface
+     */
     private $logger;
 
     /**
      * MassDelete constructor.
      *
-     * @param Context                   $context
-     * @param StatusRepositoryInterface   $repository
+     * @param Context $context
+     * @param StatusRepositoryInterface $repository
      */
     public function __construct(
         Context $context,
         StatusRepositoryInterface $repository,
         LoggerInterface $logger
-    ) {
+    )
+    {
         $this->repository = $repository;
-        $this->logger     = $logger;
+        $this->logger = $logger;
         parent::__construct($context);
     }
 
@@ -44,7 +52,7 @@ class MassDelete extends Action
         $ids = $this->getRequest()->getParam('selected');
 
         if (empty($ids)) {
-            $this->messageManager->addWarningMessage(__("Please select ids"));
+            $this->messageManager->addWarningMessage(__("Please select status"));
             return $this->_redirect('*/*/');
         }
 
@@ -52,11 +60,11 @@ class MassDelete extends Action
             try {
                 $this->repository->deleteById($id);
             } catch (NoSuchEntityException|CouldNotDeleteException $e) {
-                $this->logger->info(sprintf("item %d already delete", $id));
+                $this->logger->info(sprintf("Item %d already delete", $id));
             }
         }
 
-        $this->messageManager->addSuccessMessage(sprintf("items %s was deleted", implode(',', $ids)));
+        $this->messageManager->addSuccessMessage(sprintf("Status %s was deleted", implode(',', $ids)));
         $this->_redirect('*/*/');
     }
 }

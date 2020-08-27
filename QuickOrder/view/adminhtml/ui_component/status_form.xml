@@ -37,7 +37,7 @@
             </item>
         </argument>
         <settings>
-            <submitUrl path="quick_order/status/save" />
+            <submitUrl path="quick_order/status/save"/>
         </settings>
     </dataSource>
 
@@ -51,17 +51,17 @@
             </item>
         </argument>
 
-<!--        <field name="status_code">-->
-<!--            <argument name="data" xsi:type="array">-->
-<!--                <item name="config" xsi:type="array">-->
-<!--                    <item name="visible" xsi:type="boolean">false</item>-->
-<!--                    <item name="dataType" xsi:type="string">text</item>-->
-<!--                    <item name="formElement" xsi:type="string">input</item>-->
-<!--                    <item name="source" xsi:type="string">status</item>-->
-<!--                    <item name="dataScope" xsi:type="string">status_id</item>-->
-<!--                </item>-->
-<!--            </argument>-->
-<!--        </field>-->
+        <!--        <field name="status_code">-->
+        <!--            <argument name="data" xsi:type="array">-->
+        <!--                <item name="config" xsi:type="array">-->
+        <!--                    <item name="visible" xsi:type="boolean">false</item>-->
+        <!--                    <item name="dataType" xsi:type="string">text</item>-->
+        <!--                    <item name="formElement" xsi:type="string">input</item>-->
+        <!--                    <item name="source" xsi:type="string">status</item>-->
+        <!--                    <item name="dataScope" xsi:type="string">status_id</item>-->
+        <!--                </item>-->
+        <!--            </argument>-->
+        <!--        </field>-->
 
         <field name="status">
             <argument name="data" xsi:type="array">
@@ -101,31 +101,31 @@
             </settings>
         </field>
 
-<!--        <field name="is_default" sortOrder="10" formElement="checkbox">-->
-<!--            <argument name="data" xsi:type="array">-->
-<!--                <item name="config" xsi:type="array">-->
-<!--                    <item name="source" xsi:type="string">status_id</item>-->
-<!--                    <item name="default" xsi:type="number">0</item>-->
-<!--                </item>-->
-<!--            </argument>-->
-<!--            <settings>-->
-<!--                <validation>-->
-<!--                    <rule name="required-entry" xsi:type="boolean">false</rule>-->
-<!--                </validation>-->
-<!--                <dataType>boolean</dataType>-->
-<!--                <label translate="true">Default</label>-->
-<!--            </settings>-->
-<!--            <formElements>-->
-<!--                <checkbox>-->
-<!--                    <settings>-->
-<!--                        <valueMap>-->
-<!--                            <map name="false" xsi:type="string">0</map>-->
-<!--                            <map name="true" xsi:type="string">1</map>-->
-<!--                        </valueMap>-->
-<!--                        <prefer>toggle</prefer>-->
-<!--                    </settings>-->
-<!--                </checkbox>-->
-<!--            </formElements>-->
-<!--        </field>-->
+        <!--        <field name="is_default" sortOrder="10" formElement="checkbox">-->
+        <!--            <argument name="data" xsi:type="array">-->
+        <!--                <item name="config" xsi:type="array">-->
+        <!--                    <item name="source" xsi:type="string">status_id</item>-->
+        <!--                    <item name="default" xsi:type="number">0</item>-->
+        <!--                </item>-->
+        <!--            </argument>-->
+        <!--            <settings>-->
+        <!--                <validation>-->
+        <!--                    <rule name="required-entry" xsi:type="boolean">false</rule>-->
+        <!--                </validation>-->
+        <!--                <dataType>boolean</dataType>-->
+        <!--                <label translate="true">Default</label>-->
+        <!--            </settings>-->
+        <!--            <formElements>-->
+        <!--                <checkbox>-->
+        <!--                    <settings>-->
+        <!--                        <valueMap>-->
+        <!--                            <map name="false" xsi:type="string">0</map>-->
+        <!--                            <map name="true" xsi:type="string">1</map>-->
+        <!--                        </valueMap>-->
+        <!--                        <prefer>toggle</prefer>-->
+        <!--                    </settings>-->
+        <!--                </checkbox>-->
+        <!--            </formElements>-->
+        <!--        </field>-->
     </fieldset>
 </form>

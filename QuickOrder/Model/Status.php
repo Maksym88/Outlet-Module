@@ -1,14 +1,18 @@
 <?php
 
-
 namespace ALevel\QuickOrder\Model;
 
 use ALevel\QuickOrder\Api\Data\StatusInterface;
 use Magento\Framework\Model\AbstractModel;
 use ALevel\QuickOrder\Model\ResourceModel\Status as ResourceModel;
 
+/**
+ * Class Status
+ * @package ALevel\QuickOrder\Model
+ */
 class Status extends AbstractModel implements StatusInterface
 {
+
     public function _construct()
     {
         $this->_init(ResourceModel::class);
@@ -64,4 +68,5 @@ class Status extends AbstractModel implements StatusInterface
     {
         $this->setData(self::STATUS, $status);
     }
+
 }

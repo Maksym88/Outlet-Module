@@ -16,6 +16,10 @@ use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
 
+/**
+ * Class StatusRepository
+ * @package ALevel\QuickOrder\Repository
+ */
 class StatusRepository implements StatusRepositoryInterface
 {
     /**
@@ -43,22 +47,33 @@ class StatusRepository implements StatusRepositoryInterface
      */
     private $searchResultFactory;
 
+    /**
+     * StatusRepository constructor.
+     * @param ResourceModel $resource
+     * @param ModelFactory $modeFactory
+     * @param CollectionFactory $collectionFactory
+     * @param CollectionProcessorInterface $collectionProcessor
+     * @param SearchResultsInterfaceFactory $searchResultFactory
+     */
     public function __construct(
         ResourceModel $resource,
         ModelFactory $modeFactory,
         CollectionFactory $collectionFactory,
         CollectionProcessorInterface $collectionProcessor,
         SearchResultsInterfaceFactory $searchResultFactory
-    ) {
-        $this->resource             = $resource;
-        $this->modelFactory         = $modeFactory;
-        $this->collectionFactory    = $collectionFactory;
-        $this->processor            = $collectionProcessor;
-        $this->searchResultFactory  = $searchResultFactory;
+    )
+    {
+        $this->resource = $resource;
+        $this->modelFactory = $modeFactory;
+        $this->collectionFactory = $collectionFactory;
+        $this->processor = $collectionProcessor;
+        $this->searchResultFactory = $searchResultFactory;
     }
 
     /**
-     * @inheritDoc
+     * @param int $id
+     * @return StatusInterface
+     * @throws NoSuchEntityException
      */
     public function getById($id): StatusInterface
     {
@@ -74,7 +89,8 @@ class StatusRepository implements StatusRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return SearchResultsInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria): SearchResultsInterface
     {
@@ -94,7 +110,9 @@ class StatusRepository implements StatusRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param StatusInterface $status
+     * @return StatusInterface
+     * @throws CouldNotSaveException
      */
     public function save(StatusInterface $status): StatusInterface
     {
@@ -109,7 +127,9 @@ class StatusRepository implements StatusRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param StatusInterface $status
+     * @return $this|StatusRepositoryInterface
+     * @throws CouldNotDeleteException
      */
     public function delete(StatusInterface $status): StatusRepositoryInterface
     {
@@ -123,7 +143,10 @@ class StatusRepository implements StatusRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * @param int $id
+     * @return $this|StatusRepositoryInterface
+     * @throws CouldNotDeleteException
+     * @throws NoSuchEntityException
      */
     public function deleteById(int $id): StatusRepositoryInterface
     {

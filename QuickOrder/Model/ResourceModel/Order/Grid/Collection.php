@@ -9,6 +9,10 @@ use Magento\Framework\View\Element\UiComponent\DataProvider\Document;
 use ALevel\QuickOrder\Model\ResourceModel\Order as ResourceModel;
 use ALevel\QuickOrder\Model\ResourceModel\Order\Collection as OrderCollection;
 
+/**
+ * Class Collection
+ * @package ALevel\QuickOrder\Model\ResourceModel\Order\Grid
+ */
 class Collection extends OrderCollection implements SearchResultInterface
 {
     /** @var AggregationInterface */

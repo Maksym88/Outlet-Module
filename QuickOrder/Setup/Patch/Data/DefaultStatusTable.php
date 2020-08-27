@@ -7,6 +7,10 @@ use ALevel\QuickOrder\Api\Data\StatusInterfaceFactory;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\DB\TransactionFactory;
 
+/**
+ * Class DefaultStatusTable
+ * @package ALevel\QuickOrder\Setup\Patch\Data
+ */
 class DefaultStatusTable implements DataPatchInterface
 {
     /**
@@ -19,6 +23,11 @@ class DefaultStatusTable implements DataPatchInterface
      */
     private $modelFactory;
 
+    /**
+     * DefaultStatusTable constructor.
+     * @param TransactionFactory $transactionFactory
+     * @param StatusInterfaceFactory $statusInterfaceFactory
+     */
     public function __construct(
         TransactionFactory $transactionFactory,
         StatusInterfaceFactory $statusInterfaceFactory

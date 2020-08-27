@@ -1,6 +1,5 @@
 <?php
 
-
 namespace ALevel\QuickOrder\Controller\Adminhtml\Status;
 
 use ALevel\QuickOrder\Api\Data\StatusInterfaceFactory;
@@ -13,6 +12,10 @@ use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Exception\LocalizedException;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class Save
+ * @package ALevel\QuickOrder\Controller\Adminhtml\Status
+ */
 class Save extends Action
 {
     /** @var StatusRepositoryInterface */
@@ -27,17 +30,26 @@ class Save extends Action
     /** @var LoggerInterface */
     private $logger;
 
+    /**
+     * Save constructor.
+     * @param Context $context
+     * @param StatusRepositoryInterface $repository
+     * @param StatusInterfaceFactory $statusFactory
+     * @param DataPersistorInterface $dataPersistor
+     * @param LoggerInterface $logger
+     */
     public function __construct(
         Context $context,
         StatusRepositoryInterface $repository,
         StatusInterfaceFactory $statusFactory,
         DataPersistorInterface $dataPersistor,
         LoggerInterface $logger
-    ) {
-        $this->repository       = $repository;
-        $this->modelFactory     = $statusFactory;
-        $this->dataPersistor    = $dataPersistor;
-        $this->logger           = $logger;
+    )
+    {
+        $this->repository = $repository;
+        $this->modelFactory = $statusFactory;
+        $this->dataPersistor = $dataPersistor;
+        $this->logger = $logger;
 
         parent::__construct($context);
     }
@@ -85,11 +97,17 @@ class Save extends Action
         return $resultRedirect->setPath('*/*/');
     }
 
+    /**
+     * @param $model
+     * @param $data
+     * @param $resultRedirect
+     * @return mixed
+     */
     private function processReturn($model, $data, $resultRedirect)
     {
         $redirect = $data['back'] ?? 'close';
 
-        if ($redirect ==='continue') {
+        if ($redirect === 'continue') {
             $resultRedirect->setPath('*/*/', ['id' => $model->getId()]);
         } else if ($redirect === 'close') {
             $resultRedirect->setPath('*/*/');

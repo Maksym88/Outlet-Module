@@ -3,7 +3,10 @@
 
 namespace ALevel\QuickOrder\Api\Data;
 
-
+/**
+ * Interface StatusInterface
+ * @package ALevel\QuickOrder\Api\Data
+ */
 interface StatusInterface
 {
     const STATUS_ID = 'status_id';

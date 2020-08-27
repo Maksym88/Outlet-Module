@@ -19,7 +19,8 @@
         <arguments>
             <argument name="mainTable" xsi:type="string">alevel_quick_order</argument>
             <argument name="resourceModel"
-                      xsi:type="string">ALevel\QuickOrder\Model\ResourceModel\Order</argument>
+                      xsi:type="string">ALevel\QuickOrder\Model\ResourceModel\Order
+            </argument>
         </arguments>
     </virtualType>
 
@@ -28,7 +29,8 @@
         <arguments>
             <argument name="mainTable" xsi:type="string">alevel_quick_order_status</argument>
             <argument name="resourceModel"
-                      xsi:type="string">ALevel\QuickOrder\Model\ResourceModel\Status</argument>
+                      xsi:type="string">ALevel\QuickOrder\Model\ResourceModel\Status
+            </argument>
         </arguments>
     </virtualType>
 
